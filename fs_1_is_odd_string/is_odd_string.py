@@ -29,3 +29,18 @@ def is_odd_string(word):
     """
 
     # Hint: you may find the ord() function useful here
+
+    # Setup alpha_val as dictionary of values for each char in alphabet
+    alphabet_lst = list("abcdefghijklmnopqrstuvwxyz")
+    alpha_val = {}
+    for x in range(0, len(alphabet_lst)):
+        alpha_val[alphabet_lst[x]] = x + 1
+
+    word_sum = 0
+    for char in word.lower():
+        word_sum += alpha_val[char]
+
+    if word_sum % 2 == 0:
+        return False
+    
+    return True
